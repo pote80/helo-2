@@ -38,7 +38,6 @@ module.exports = {
             return res.sendStatus(404)
         }
         let authenticated = bcrypt.compareSync(password, user.password);
-        console.log(authenticated)
         if (authenticated) {
             delete user.password;
             session.user = user
